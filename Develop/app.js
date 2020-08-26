@@ -10,6 +10,97 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+let employeeArr = []
+
+// Begins the add employee process
+function startApp() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Do you want to enter a new employee?",
+                name: "add",
+                choices: ["Yes", "No"]
+            }
+        ])
+        .then((answer) => {
+            if (answer.add === "Yes") {
+                addEmployee()
+            } else {
+                // let html = render(employeeArr)
+            }
+        })
+}
+
+// Chooses which employee function to run
+function addEmployee() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Select an employee type to enter:",
+                name: "employee",
+                choices: ["Manager", "Engineer", "Intern"]
+            }
+        ])
+        .then((answer) => {
+            switch(answer.employee) {
+                case "Manager":
+                    addManager()
+                    break
+                case "Engineer":
+                    addEngineer()
+                    break
+                case "Intern":
+                    addIntern()
+                    break
+            }
+        })
+}
+
+function addManager() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "Enter manager's name",
+                name: "name"
+            },
+            {
+                type: "input",
+                message: "Enter manager's ID",
+                name: "id"
+            },
+            {
+                type: "input",
+                message: "Enter manager's email address",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "Enter manager's office number",
+                name: "officeNumber"
+            }
+        ])
+        .then((answers) => {
+            const manager = new Manager(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.officeNumber
+            )
+            employeeArr.push(manager)
+            startApp()
+        })
+}
+
+// addEngineer()
+
+// addIntern()
+
+// Begins the app
+startApp()
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
