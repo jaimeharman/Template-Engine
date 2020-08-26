@@ -94,7 +94,78 @@ function addManager() {
         })
 }
 
-// addEngineer()
+function addEngineer() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "Enter engineer's name",
+                name: "name"
+            },
+            {
+                type: "input",
+                message: "Enter engineer's ID",
+                name: "id"
+            },
+            {
+                type: "input",
+                message: "Enter engineer's email address",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "Enter engineer's github",
+                name: "github"
+            }
+        ])
+        .then((answers) => {
+            const engineer = new Engineer(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.github
+            )
+            employeeArr.push(engineer)
+            startApp()
+        })
+}
+
+
+function addIntern() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "Enter intern's name",
+                name: "name"
+            },
+            {
+                type: "input",
+                message: "Enter intern's ID",
+                name: "id"
+            },
+            {
+                type: "input",
+                message: "Enter intern's email address",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "Enter intern's school",
+                name: "school"
+            }
+        ])
+        .then((answers) => {
+            const intern = new Intern(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.school
+            )
+            employeeArr.push(school)
+            startApp()
+        })
+}
 
 // addIntern()
 
