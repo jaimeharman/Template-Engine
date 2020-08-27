@@ -27,7 +27,14 @@ function startApp() {
             if (answer.add === "Yes") {
                 addEmployee()
             } else {
-                // let html = render(employeeArr)
+                try {
+                    let html = render(employeeArr)
+                    fs.writeFileSync(outputPath, html, "utf-8")
+                    console.log("\nGenerating your HTML file\n")
+                }
+                catch(err) {
+                    console.log(err)
+                }
             }
         })
 }
@@ -162,12 +169,15 @@ function addIntern() {
                 answers.email,
                 answers.school
             )
-            employeeArr.push(school)
+            employeeArr.push(intern)
             startApp()
         })
 }
 
-// addIntern()
+
+
+
+
 
 // Begins the app
 startApp()
