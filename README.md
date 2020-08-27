@@ -8,9 +8,9 @@ This application will build a software engineering team generator command line a
 # Installation
 You will need to run npm install from inside the folder with package.json
 
-# Examples of Code
+# Example of Code
 ![app.js code](Assets/images/app.js)
-![code example](Assets/images/employee.js code.PNG)
+
 
 # Usage
 You will install the dependencies, then run via node app.js; Once prompted, you will input information. You can continue to add new employees by selecting "yes" or you may select "no" to exit. This will generate the team.html profile;
@@ -20,7 +20,8 @@ You will install the dependencies, then run via node app.js; Once prompted, you 
 # Tests
 You can npm run test to check the validity of the classes used for the team: Employee and then, Manager, Egineer, and Intern that inherit the Employee class.
 
-![tests](Assets/images/tests.png)
+![tests](Assets/images/tests.PNG)
+
 
 # Questions
 Please contact me at jaimeharman17@gmail.com
