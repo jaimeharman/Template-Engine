@@ -1,7 +1,10 @@
 # Template-Engine
 
 # Description
-This application will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user.
+This application will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. 
+
+# Bonus
+The application has specifications that color code the Team Member making it easier to identify the choices. If you were looking for a Manager, you would easily be able to spot them due to the color of the card header. 
 
 ![HTML Team Profile](Assets/images/teamprofile.PNG)
 
